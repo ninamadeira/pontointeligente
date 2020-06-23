@@ -1,4 +1,4 @@
-package com.madeira.pontointeligente.api.controlllers;
+package com.madeira.pontointeligente.api.controllers;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;

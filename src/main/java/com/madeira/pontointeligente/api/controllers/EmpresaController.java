@@ -17,6 +17,7 @@ import com.madeira.pontointeligente.api.entities.Empresa;
 import com.madeira.pontointeligente.api.response.Response;
 import com.madeira.pontointeligente.api.services.EmpresaService;
 
+
 @RestController
 @RequestMapping("/api/empresas")
 @CrossOrigin(origins = "*")

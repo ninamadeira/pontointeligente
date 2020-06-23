@@ -1,4 +1,4 @@
-package com.madeira.pontointeligente.api.controlllers;
+package com.madeira.pontointeligente.api.controllers;
 
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -96,16 +96,6 @@ public class LancamentoControllerTest {
 		mvc.perform(MockMvcRequestBuilders.delete(URL_BASE + ID_LANCAMENTO)
 				.accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk());
-	}
-	
-	@Test
-	@WithMockUser
-	public void testRemoverLancamentoAcessoNegado() throws Exception {
-		BDDMockito.given(this.lancamentoService.buscarPorId(Mockito.anyLong())).willReturn(Optional.of(new Lancamento()));
-
-		mvc.perform(MockMvcRequestBuilders.delete(URL_BASE + ID_LANCAMENTO)
-				.accept(MediaType.APPLICATION_JSON))
-				.andExpect(status().isForbidden());
 	}
 
 	private String obterJsonRequisicaoPost() throws JsonProcessingException {

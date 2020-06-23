@@ -25,6 +25,7 @@ import com.madeira.pontointeligente.api.response.Response;
 import com.madeira.pontointeligente.api.services.FuncionarioService;
 import com.madeira.pontointeligente.api.utils.PasswordUtils;
 
+
 @RestController
 @RequestMapping("/api/funcionarios")
 @CrossOrigin(origins = "*")

@@ -37,6 +37,7 @@ import com.madeira.pontointeligente.api.response.Response;
 import com.madeira.pontointeligente.api.services.FuncionarioService;
 import com.madeira.pontointeligente.api.services.LancamentoService;
 
+
 @RestController
 @RequestMapping("/api/lancamentos")
 @CrossOrigin(origins = "*")
@@ -51,8 +52,8 @@ public class LancamentoController {
 	@Autowired
 	private FuncionarioService funcionarioService;
 	
-	//@Value("${paginacao.qtd_por_pagina}")
-	private int qtdPorPagina=25;
+	@Value("${paginacao.qtd_por_pagina}")
+	private int qtdPorPagina;
 
 	public LancamentoController() {
 	}
@@ -73,7 +74,7 @@ public class LancamentoController {
 		log.info("Buscando lançamentos por ID do funcionário: {}, página: {}", funcionarioId, pag);
 		Response<Page<LancamentoDto>> response = new Response<Page<LancamentoDto>>();
 
-		PageRequest pageRequest = PageRequest.of(pag, this.qtdPorPagina, Direction.valueOf(dir), ord);
+		PageRequest pageRequest = new PageRequest(pag, this.qtdPorPagina, Direction.valueOf(dir), ord);
 		Page<Lancamento> lancamentos = this.lancamentoService.buscarPorFuncionarioId(funcionarioId, pageRequest);
 		Page<LancamentoDto> lancamentosDto = lancamentos.map(lancamento -> this.converterLancamentoDto(lancamento));
 

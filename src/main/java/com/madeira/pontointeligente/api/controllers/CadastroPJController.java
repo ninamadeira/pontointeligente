@@ -1,4 +1,4 @@
-	package com.madeira.pontointeligente.api.controllers;
+package com.madeira.pontointeligente.api.controllers;
 
 import java.security.NoSuchAlgorithmException;
 
@@ -24,6 +24,7 @@ import com.madeira.pontointeligente.api.response.Response;
 import com.madeira.pontointeligente.api.services.EmpresaService;
 import com.madeira.pontointeligente.api.services.FuncionarioService;
 import com.madeira.pontointeligente.api.utils.PasswordUtils;
+
 
 @RestController
 @RequestMapping("/api/cadastrar-pj")
