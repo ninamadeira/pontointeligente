@@ -1,15 +1,12 @@
 package com.madeira.pontointeligente.api.dtos;
 
-import java.util.Date;
-import java.util.List;
 
-import org.hibernate.validator.constraints.Email;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+
 import org.hibernate.validator.constraints.Length;
-import org.hibernate.validator.constraints.NotEmpty;
 import org.hibernate.validator.constraints.br.CNPJ;
 import org.hibernate.validator.constraints.br.CPF;
-
-import com.madeira.pontointeligente.api.entities.Funcionario;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

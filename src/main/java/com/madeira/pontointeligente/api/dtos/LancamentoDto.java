@@ -2,7 +2,7 @@ package com.madeira.pontointeligente.api.dtos;
 
 import java.util.Optional;
 
-import org.hibernate.validator.constraints.NotEmpty;
+import javax.validation.constraints.NotEmpty;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

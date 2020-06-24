@@ -24,13 +24,12 @@ import javax.persistence.Transient;
 
 import com.madeira.pontointeligente.api.enums.PerfilEnum;
 
-
 @Entity
 @Table(name = "funcionario")
 public class Funcionario implements Serializable {
 
 	private static final long serialVersionUID = -5754246207015712518L;
-	
+
 	private Long id;
 	private String nome;
 	private String email;
@@ -49,7 +48,7 @@ public class Funcionario implements Serializable {
 	}
 
 	@Id
-    @GeneratedValue(strategy=GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	public Long getId() {
 		return id;
 	}
@@ -89,7 +88,7 @@ public class Funcionario implements Serializable {
 	public BigDecimal getValorHora() {
 		return valorHora;
 	}
-	
+
 	@Transient
 	public Optional<BigDecimal> getValorHoraOpt() {
 		return Optional.ofNullable(valorHora);
@@ -103,7 +102,7 @@ public class Funcionario implements Serializable {
 	public Float getQtdHorasTrabalhoDia() {
 		return qtdHorasTrabalhoDia;
 	}
-	
+
 	@Transient
 	public Optional<Float> getQtdHorasTrabalhoDiaOpt() {
 		return Optional.ofNullable(qtdHorasTrabalhoDia);
@@ -117,7 +116,7 @@ public class Funcionario implements Serializable {
 	public Float getQtdHorasAlmoco() {
 		return qtdHorasAlmoco;
 	}
-	
+
 	@Transient
 	public Optional<Float> getQtdHorasAlmocoOpt() {
 		return Optional.ofNullable(qtdHorasAlmoco);
@@ -159,7 +158,7 @@ public class Funcionario implements Serializable {
 	public String getSenha() {
 		return senha;
 	}
-	
+
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
@@ -181,25 +180,25 @@ public class Funcionario implements Serializable {
 	public void setLancamentos(List<Lancamento> lancamentos) {
 		this.lancamentos = lancamentos;
 	}
-	
+
 	@PreUpdate
-    public void preUpdate() {
-        dataAtualizacao = new Date();
-    }
-     
-    @PrePersist
-    public void prePersist() {
-        final Date atual = new Date();
-        dataCriacao = atual;
-        dataAtualizacao = atual;
-    }
+	public void preUpdate() {
+		dataAtualizacao = new Date();
+	}
+
+	@PrePersist
+	public void prePersist() {
+		final Date atual = new Date();
+		dataCriacao = atual;
+		dataAtualizacao = atual;
+	}
 
 	@Override
 	public String toString() {
 		return "Funcionario [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", cpf=" + cpf
 				+ ", valorHora=" + valorHora + ", qtdHorasTrabalhoDia=" + qtdHorasTrabalhoDia + ", qtdHorasAlmoco="
-				+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao="
-				+ dataCriacao + ", dataAtualizacao=" + dataAtualizacao + ", empresa=" + empresa + "]";
+				+ qtdHorasAlmoco + ", perfil=" + perfil + ", dataCriacao=" + dataCriacao + ", dataAtualizacao="
+				+ dataAtualizacao + ", empresa=" + empresa + "]";
 	}
 
 }

@@ -9,12 +9,9 @@ import lombok.ToString;
 @Setter
 @Getter
 @ToString
-
 public class EmpresaDto {
-	
+
 	private Long id;
 	private String razaoSocial;
 	private String cnpj;
 }
-
-	
