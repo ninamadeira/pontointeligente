@@ -98,7 +98,7 @@ public class LancamentoControllerTest {
 	@WithMockUser
 	public void testRemoverLancamentoAcessoNegado() throws Exception {
 		BDDMockito.given(this.lancamentoService.buscarPorId(Mockito.anyLong()))
-				.willReturn(Optional.ofNullable(new Lancamento()));
+				.willReturn(Optional.of(new Lancamento()));
 
 		mvc.perform(MockMvcRequestBuilders.delete(URL_BASE + ID_LANCAMENTO).accept(MediaType.APPLICATION_JSON))
 				.andExpect(status().isForbidden());

@@ -37,6 +37,7 @@ public class CadastroPFDto {
 	@NotEmpty(message = "CPF não pode ser vazio.")
 	@CPF(message = "CPF inválido")
 	private String cpf;
+	
 	private Optional<String> valorHora = Optional.empty();
 	private Optional<String> qtdHorasTrabalhoDia = Optional.empty();
 	private Optional<String> qtdHorasAlmoco = Optional.empty();
